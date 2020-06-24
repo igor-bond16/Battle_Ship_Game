@@ -16,7 +16,7 @@ num_list = ("F1","F2","F3","F4","F5","F6","F7","F8","F9","F10")
 array_1 = np.zeros([10,10],dtype=int)
 array_2 = np.zeros([10,10],dtype=int)
 numbers = []
-bombed = [i for i in range(100)]
+bombed = []
 player_1 = True
 p1_counter = 0
 p2_counter = 0
@@ -186,8 +186,7 @@ def bombing(i):
         pygame.display.update()
         victory.play()
 
-    select_num = random.randint(0,99)
-    num = bombed[select_num]
+    num = random.randint(0,99)
     bombed.append(num)
     array1 = array_1.reshape(-1,1)
     while True:

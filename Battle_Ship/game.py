@@ -268,19 +268,12 @@ class Game_Play(Screen):
             if self.hits == 15 or self.player.destroyed == 15:
                 self.game.switch_screen(self.game.gameset_screen)
 
-    def update(self):
-        pass
-
     def draw(self):
         self.win.fill(WHITE)
         self.map.draw(True)
 
         for ship in self.ships:
             self.win.blit(ship.image, ship.rect)
-
-        for pos in self.ai_ships:
-            x,y = pos
-            pygame.draw.rect(self.win,BLACK,(x,y,TILE,TILE))
 
         for x,y in self.player.attacked_positions:
             if (x,y) in self.ai_ships:
